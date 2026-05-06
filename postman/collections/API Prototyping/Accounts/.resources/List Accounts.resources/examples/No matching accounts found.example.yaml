@@ -1,0 +1,19 @@
+$kind: http-example
+request:
+  url: "{{url}}/api/v1/accounts?owner=Norman Nobody&createdAt=2023-04-10"
+  method: GET
+  queryParams:
+    owner: Norman Nobody
+    createdAt: 2023-04-10
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+          "accounts": []
+      }
+order: 3000

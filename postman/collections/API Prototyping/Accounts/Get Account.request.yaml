@@ -1,0 +1,23 @@
+$kind: http-request
+description: This endpoint will retrieve information about an account by passing the account `id` as a path parameter.
+url: "{{url}}/api/v1/accounts/:id"
+method: GET
+pathVariables:
+  - key: id
+    value: "17"
+    description: (Required) ID of account
+scripts:
+  - type: afterResponse
+    code: |-
+      // Test the response body structure and values
+      pm.test("Response body structure is valid", function () {
+          var responseJSON = pm.response.json();
+          pm.expect(responseJSON).to.have.property('account').that.is.an('object');
+          pm.expect(responseJSON.account).to.have.property('id').that.is.a('number');
+          pm.expect(responseJSON.account).to.have.property('owner').that.is.a('string');
+          pm.expect(responseJSON.account).to.have.property('balance').that.is.a('number');
+          pm.expect(responseJSON.account).to.have.property('currency').that.is.a('string');
+      });
+    language: text/javascript
+examples: ./.resources/Get Account.resources/examples
+order: 2000

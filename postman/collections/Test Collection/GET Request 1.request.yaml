@@ -1,0 +1,12 @@
+$kind: http-request
+url: "{{baseUrl}}/users/1"
+method: GET
+queryParams:
+  - key: id
+    value: "1"
+    disabled: true
+body:
+  type: json
+  content: ""
+examples: ./.resources/GET Request 1.resources/examples
+order: 1000

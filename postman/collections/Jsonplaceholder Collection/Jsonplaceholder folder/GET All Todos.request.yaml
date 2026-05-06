@@ -1,0 +1,37 @@
+$kind: http-request
+description: Retorna todos los todos de Jsonplaceholder
+url: "{{baseUrl}}/todos"
+method: GET
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("Status code is 200", function () {
+          pm.response.to.have.status(200);
+      });
+
+      pm.test("Response time is less than 3000ms", function () {
+          pm.expect(pm.response.responseTime).to.be.below(3000);
+      });
+
+      pm.test("Response is an array", function () {
+          const jsonData = pm.response.json();
+          pm.expect(jsonData).to.be.an("array");
+      });
+
+      pm.test("Array is not empty", function () {
+          const jsonData = pm.response.json();
+          pm.expect(jsonData.length).to.be.above(0);
+      });
+
+      pm.test("Each todo has required fields", function () {
+          const jsonData = pm.response.json();
+          jsonData.forEach(function(todo) {
+              pm.expect(todo).to.have.property("id");
+              pm.expect(todo).to.have.property("userId");
+              pm.expect(todo).to.have.property("title");
+              pm.expect(todo).to.have.property("completed");
+              pm.expect(todo.completed).to.be.a("boolean");
+          });
+      });
+    language: text/javascript
+order: 8000

@@ -1,0 +1,6 @@
+name: Environment Swapi
+values:
+  - key: baseUrl
+    value: https://swapi.info/api/
+    enabled: true
+color: null

@@ -1,0 +1,6 @@
+name: Environment Poke
+values:
+  - key: baseUrl
+    value: ""
+    enabled: true
+color: null

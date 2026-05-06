@@ -1,0 +1,6 @@
+name: Environment Jsonplaceholder
+values:
+  - key: baseUrl
+    value: ""
+    enabled: true
+color: null

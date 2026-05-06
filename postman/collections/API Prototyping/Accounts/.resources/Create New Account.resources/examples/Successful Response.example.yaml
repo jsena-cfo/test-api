@@ -1,0 +1,26 @@
+$kind: http-example
+request:
+  url: "{{url}}/api/v1/accounts"
+  method: POST
+  body:
+    type: json
+    content: |-
+      {
+          "owner": "Nova Newman",
+       	"balance" : 500,
+          "currency" : "COSMIC_COINS"
+      }
+response:
+  statusCode: 201
+  statusText: Created
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+          "account": {
+              "id": "123"
+          }
+      }
+order: 1000

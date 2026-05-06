@@ -1,0 +1,31 @@
+$kind: http-request
+description: |-
+  This endpoint will create a new transaction. Funds will be transferred between accounts by providing two account IDs in the `fromAccountId` and `toAccountId` fields.
+
+  ### Important!
+
+  Transactions cannot be edited once created, so use this endpoint with caution.
+url: "{{url}}/api/v1/transactions"
+method: POST
+body:
+  type: json
+  content: |-
+    {
+        "fromAccountId" : 28,
+        "toAccountId" : 27,
+        "amount" : 1000,
+        "currency" : "COSMIC_COINS"
+    }
+scripts:
+  - type: afterResponse
+    code: |-
+      var responseJSON = pm.response.json();
+
+      // Test the response body structure and values
+      pm.test("Response body structure is valid", function () {
+          pm.expect(responseJSON).to.be.an('object').that.has.property('success', true);
+          pm.expect(responseJSON).to.have.property('transaction').that.is.an('object').and.has.property('id');
+      });
+    language: text/javascript
+examples: ./.resources/Create New Transaction.resources/examples
+order: 3000

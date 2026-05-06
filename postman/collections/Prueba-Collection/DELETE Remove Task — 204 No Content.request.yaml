@@ -1,0 +1,7 @@
+$kind: http-request
+url: "{{baseUrl}}/tasks/:id"
+method: DELETE
+pathVariables:
+  id: ""
+examples: ./.resources/DELETE Remove Task — 204 No Content.resources/examples
+order: 7000

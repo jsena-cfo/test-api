@@ -1,0 +1,10 @@
+$kind: http-request
+url: "{{baseUrl}}/tasks/:id"
+method: PUT
+pathVariables:
+  id: ""
+body:
+  type: text
+  content: ""
+examples: ./.resources/PUT Update Task — 200 OK.resources/examples
+order: 6000

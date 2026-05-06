@@ -1,0 +1,26 @@
+$kind: http-request
+url: "{{baseUrl}}/species/"
+method: GET
+queryParams:
+  - key: id
+    value: "1"
+    disabled: true
+body:
+  type: text
+  content: "{\r
+
+    \  \"title\": \"Updated Jira Tickets (edited)\",\r
+
+    \  \"completed\": false\r
+
+    }"
+scripts:
+  - type: afterResponse
+    code: "pm.test(\"Status code is 200\", function (){\r
+
+      \  pm.response.to.have.status(200)\r
+
+      });"
+    language: text/javascript
+examples: ./.resources/GET All Characters.resources/examples
+order: 2000

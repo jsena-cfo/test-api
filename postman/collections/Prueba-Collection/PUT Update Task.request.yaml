@@ -1,0 +1,17 @@
+$kind: http-request
+url: "{{baseUrl}}/tasks/1"
+method: PUT
+queryParams:
+  - key: id
+    value: "1"
+    disabled: true
+body:
+  type: json
+  content: "{\r
+
+    \  \"title\": \"Updated Jira Tickets (edited)\",\r
+
+    \  \"completed\": false\r
+
+    }"
+order: 2000

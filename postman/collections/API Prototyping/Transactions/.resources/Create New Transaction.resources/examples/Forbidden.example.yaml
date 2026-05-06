@@ -1,0 +1,26 @@
+$kind: http-example
+request:
+  url: "{{url}}/api/v1/transactions"
+  method: POST
+  body:
+    type: json
+    content: |-
+      {
+          "fromAccountId" : 1,
+          "toAccountId" : 2,
+          "amount" : 1000,
+          "currency" : "COSMIC_COINS"
+      }
+response:
+  statusCode: 403
+  statusText: Forbidden
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+          "name": "invalidAuth",
+          "message": "Please provide a valid API key in the header of the request."
+      }
+order: 3000

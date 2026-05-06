@@ -1,0 +1,20 @@
+$kind: http-request
+description: This endpoint will retrieve details of a specific transaction by providing the transaction ID as a path parameter.
+url: "{{url}}/api/v1/transactions/:id"
+method: GET
+pathVariables:
+  - key: id
+    value: "4"
+    description: (Required) ID of transaction
+scripts:
+  - type: afterResponse
+    code: |-
+      // Test the response body structure and values
+      pm.test("Response body structure is valid", function () {
+          var responseJSON = pm.response.json();
+          pm.expect(responseJSON).has.property('transaction');
+          pm.expect(responseJSON.transaction).to.be.an('object').that.has.all.keys('id', 'createdAt', 'fromAccountId', 'toAccountId', 'currency', 'amount');
+      });
+    language: text/javascript
+examples: ./.resources/Get a transaction.resources/examples
+order: 2000

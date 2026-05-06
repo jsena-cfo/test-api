@@ -1,0 +1,25 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/tasks"
+  method: GET
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: "[\r
+
+      \  {\r
+
+      \  \"id\": 1,\r
+
+      \  \"title\": \"Update Prueba\",\r
+
+      \  \"completed\": false\r
+
+      \  }\r
+
+      ]"
+order: 1000

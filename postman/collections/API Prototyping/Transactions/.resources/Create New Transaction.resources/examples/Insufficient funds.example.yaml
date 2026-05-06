@@ -1,0 +1,30 @@
+$kind: http-example
+request:
+  url: "{{url}}/api/v1/transactions"
+  method: POST
+  body:
+    type: json
+    content: |-
+      {
+          "fromAccountId" : 17,
+          "toAccountId" : 19,
+          "amount" : 1000000000000000000000,
+          "currency" : "COSMIC_COINS"
+      }
+response:
+  statusCode: 400
+  statusText: Bad Request
+  headers:
+    Date: Sat, 17 Feb 2024 13:16:53 GMT
+    Content-Type: application/json; charset=utf-8
+    Content-Length: "101"
+    Connection: keep-alive
+    uWebSockets: "20"
+  body:
+    type: json
+    content: |-
+      {
+          "name": "invalidBody",
+          "message": "Insufficient balance in fromAccountId to initiate the transaction."
+      }
+order: 2000

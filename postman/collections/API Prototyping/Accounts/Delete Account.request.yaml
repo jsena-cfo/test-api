@@ -1,0 +1,25 @@
+$kind: http-request
+description: |-
+  This endpoint will delete an account by passing in the account `id` as a path parameter.
+
+  ### Important!
+
+  Once an account is deleted, it cannot be restored, so please use this endpoint with caution.
+
+  Additionally, only bank admins have permission to update an account. You may encounter a `403 Forbidden` error if you try to update an account without the correct permissions.
+url: "{{url}}/api/v1/accounts/:id"
+method: DELETE
+pathVariables:
+  id: "22"
+scripts:
+  - type: afterResponse
+    code: |-
+      var response = pm.response.text()
+
+      // Test the response body structure
+      pm.test("Response body to be empty", function () {
+          pm.expect(response).to.be.empty;
+      });
+    language: text/javascript
+examples: ./.resources/Delete Account.resources/examples
+order: 4000

@@ -1,0 +1,12 @@
+$kind: http-request
+url: ""
+method: POST
+scripts:
+  - type: afterResponse
+    code: "pm.test(\"Status code is 201\", function () {\r
+
+      \  pm.response.to.have.status(201);\r
+
+      });"
+    language: text/javascript
+order: 4000

@@ -1,0 +1,6 @@
+name: Prueba Mock Server
+values:
+  - key: baseUrl
+    value: ""
+    enabled: true
+color: null

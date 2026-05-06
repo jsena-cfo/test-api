@@ -1,0 +1,20 @@
+$kind: http-request
+description: Returns a list of airport codes
+url: "{{baseUrl}}/airports?countryName=United States&airportCode=ATL"
+method: GET
+headers:
+  Accept: application/json
+queryParams:
+  - key: countryName
+    value: United States
+  - key: airportCode
+    value: ATL
+    description: airport code
+auth:
+  type: apikey
+  credentials:
+    key: x-api-key
+    value: "{{apiKey}}"
+    in: header
+examples: ./.resources/Retrieve airport codes.resources/examples
+order: 1000

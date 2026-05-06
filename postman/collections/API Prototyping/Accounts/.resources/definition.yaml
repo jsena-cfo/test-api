@@ -1,0 +1,3 @@
+$kind: collection
+description: An Account at the Intergalactic Bank allows you to store funds. Account endpoints return information about accounts and account holders at the Intergalactic Bank. They should not return information about transactions. Instead, all transaction information should be accessed by requests in the `Transactions` folder.
+order: 2000

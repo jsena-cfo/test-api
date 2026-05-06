@@ -1,0 +1,28 @@
+$kind: http-example
+request:
+  url: "{{url}}/api/v1/transactions"
+  method: POST
+  body:
+    type: json
+    content: |-
+      {
+          "fromAccountId" : 28,
+          "toAccountId" : 27,
+          "amount" : 1000,
+          "currency" : "COSMIC_COINS"
+      }
+response:
+  statusCode: 201
+  statusText: Created
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+          "success": true,
+          "transaction": {
+              "id": 8
+          }
+      }
+order: 1000

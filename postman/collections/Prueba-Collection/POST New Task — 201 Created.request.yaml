@@ -1,0 +1,8 @@
+$kind: http-request
+url: "{{baseUrl}}/tasks"
+method: POST
+body:
+  type: json
+  content: ""
+examples: ./.resources/POST New Task — 201 Created.resources/examples
+order: 5000

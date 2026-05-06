@@ -1,0 +1,5 @@
+$kind: http-request
+description: List od SW Starships
+url: "{{baseUrl}}/starships"
+method: GET
+order: 1000

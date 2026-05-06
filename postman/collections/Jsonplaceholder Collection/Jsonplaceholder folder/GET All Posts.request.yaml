@@ -1,0 +1,15 @@
+$kind: http-request
+description: Retorna todos los posts de Jsonplaceholder
+url: "{{baseUrl}}/posts"
+method: GET
+headers:
+  Content-Type: application/json
+scripts:
+  - type: afterResponse
+    code: "pm.test(\"Status code is 200\", function (){\r
+
+      \  pm.response.to.have.status(200)\r
+
+      });"
+    language: text/javascript
+order: 1000

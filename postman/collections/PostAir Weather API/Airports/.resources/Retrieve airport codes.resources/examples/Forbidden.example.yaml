@@ -1,0 +1,33 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/airports?countryName=United States&airportCode=ATL"
+  method: GET
+  headers:
+    - key: Accept
+      value: application/problem+json
+    - key: x-api-key
+      value: <API Key>
+      description: "Added as a part of security scheme: apikey"
+  queryParams:
+    - key: countryName
+      value: United States
+    - key: airportCode
+      value: ATL
+      description: airport code
+response:
+  statusCode: 403
+  statusText: Forbidden
+  headers:
+    Content-Type: application/problem+json
+  body:
+    type: json
+    content: |-
+      {
+        "type": "https://en.wikipedia.org/wiki/HTTP_403",
+        "title": "Forbidden",
+        "status": 403,
+        "detail": "Missing persmissions to access this resource",
+        "instance": "urn:api:request:example-403",
+        "correlationId": "example-correlation-id"
+      }
+order: 3000

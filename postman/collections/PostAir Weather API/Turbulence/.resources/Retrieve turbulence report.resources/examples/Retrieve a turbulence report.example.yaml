@@ -1,0 +1,88 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/turbulence?airportCode=ATL"
+  method: GET
+  headers:
+    - key: Accept
+      value: application/json
+    - key: x-api-key
+      value: <API Key>
+      description: "Added as a part of security scheme: apikey"
+  queryParams:
+    - key: airportCode
+      value: ATL
+      description: airport code
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+    x-correlation-id: ""
+  body:
+    type: json
+    content: |-
+      [
+        {
+          "airport": {
+            "code": "string"
+          },
+          "turbulenceReport": {
+            "timestamp": "2016-07-20T09:05:09.176Z",
+            "severity": "severe",
+            "altitude": {
+              "feet": 1063,
+              "meters": 6782
+            },
+            "durationMinutes": 981,
+            "affectedArea": {
+              "radiusNm": 799,
+              "center": {
+                "latitude": 6743.04450908012,
+                "longitude": 1492.8903340945433
+              }
+            },
+            "windSpeed": {
+              "knots": 1792,
+              "mph": 4003.725045599356
+            },
+            "pilotReport": "string",
+            "weatherConditions": {
+              "temperatureCelsius": 825,
+              "visibilityKm": 6204.144613901057,
+              "cloudCover": "string"
+            }
+          }
+        },
+        {
+          "airport": {
+            "code": "string"
+          },
+          "turbulenceReport": {
+            "timestamp": "1997-03-13T17:34:29.352Z",
+            "severity": "moderate",
+            "altitude": {
+              "feet": 3263,
+              "meters": 2333
+            },
+            "durationMinutes": 2323,
+            "affectedArea": {
+              "radiusNm": 9880,
+              "center": {
+                "latitude": 8096.358895623601,
+                "longitude": 9525.829720843001
+              }
+            },
+            "windSpeed": {
+              "knots": 3588,
+              "mph": 5382.066747852896
+            },
+            "pilotReport": "string",
+            "weatherConditions": {
+              "temperatureCelsius": 1931,
+              "visibilityKm": 6057.23981731394,
+              "cloudCover": "string"
+            }
+          }
+        }
+      ]
+order: 1000
