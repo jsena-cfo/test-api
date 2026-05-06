@@ -1,0 +1,31 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/metars?airportCode=ATL"
+  method: GET
+  headers:
+    - key: Accept
+      value: application/problem+json
+    - key: x-api-key
+      value: <API Key>
+      description: "Added as a part of security scheme: apikey"
+  queryParams:
+    - key: airportCode
+      value: ATL
+      description: airport code
+response:
+  statusCode: 404
+  statusText: Not Found
+  headers:
+    Content-Type: application/problem+json
+  body:
+    type: json
+    content: |-
+      {
+        "type": "https://en.wikipedia.org/wiki/HTTP_404",
+        "title": "Not Found",
+        "status": 404,
+        "detail": "The requested resource was not found.",
+        "instance": "urn:api:request:example-404",
+        "correlationId": "example-correlation-id"
+      }
+order: 4000

@@ -1,0 +1,26 @@
+$kind: http-example
+request:
+  url: "{{url}}/api/v1/accounts?owner=Nova Newman"
+  method: GET
+  queryParams:
+    owner: Nova Newman
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+          "accounts": [
+              {
+                  "id": "1",
+                  "owner": "Nova Newman",
+                  "createdAt": "2023-04-10",
+                  "balance": 10000,
+                  "currency" : "COSMIC_COINS"
+              }
+          ]
+      }
+order: 2000

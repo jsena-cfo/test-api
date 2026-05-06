@@ -1,0 +1,46 @@
+$kind: http-request
+description: |-
+  This endpoint will update information about an account by passing the `accountId` as a path parameter and additional information through the Request Body.
+
+  ### Request Body Properties
+
+  | **Property Name** | **Data Type** | **Description** | **Required?** |
+  | --- | --- | --- | --- |
+  | owner | String | Full Name | Yes |
+
+  ### Important!
+
+  Only Bank Admins have permission to update an account. You may encounter a `403 Forbidden Error` if you try to update an account without the correct permissions.
+url: "{{url}}/api/v1/accounts/:id"
+method: PATCH
+pathVariables:
+  id: "14"
+body:
+  type: json
+  content: |-
+    {
+        "owner": "Paul Stars",
+     	"balance" : 57000,
+        "currency" : "COSMIC_COINS"
+    }
+scripts:
+  - type: afterResponse
+    code: |-
+      // Test to check the structure of the successful response
+      pm.test("Successful response has the correct structure", function () {
+          var responseData = pm.response.json();
+
+          // Check if the response contains the account object
+          pm.expect(responseData).to.have.property('account');
+          pm.expect(responseData.account).to.be.an('object');
+
+          // Check the properties of the account object
+          pm.expect(responseData.account).to.have.property('id');
+          pm.expect(responseData.account).to.have.property('owner');
+          pm.expect(responseData.account).to.have.property('balance');
+          pm.expect(responseData.account).to.have.property('currency');
+          pm.expect(responseData.account).to.have.property('createdAt');
+      });
+    language: text/javascript
+examples: ./.resources/Update Account.resources/examples
+order: 3000

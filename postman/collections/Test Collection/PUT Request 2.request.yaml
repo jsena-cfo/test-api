@@ -1,0 +1,16 @@
+$kind: http-request
+url: "{{baseUrl}}/users/2"
+method: PUT
+body:
+  type: json
+  content: "{\r
+
+    \  \"id\": 2,\r
+
+    \  \"name\": \"Jane Doe\",\r
+
+    \  \"email\": \"janedoe@example.com\"\r
+
+    }"
+examples: ./.resources/PUT Request 2.resources/examples
+order: 5000

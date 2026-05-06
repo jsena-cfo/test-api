@@ -1,0 +1,33 @@
+$kind: http-request
+description: |-
+  This endpoint will create a new account at the Intergalactic Bank.
+
+  ### Request Body Properties
+
+  | Property Name | Property Type | **Description** | **Required?** |
+  | --- | --- | --- | --- |
+  | owner | String | Full name of the person opening this account | Yes |
+  | balance | Number | The starting balance of the account | Yes |
+  | currency | String - Possible values: `COSMIC_COINS`, `GALAXY_GOLD`, `MOON_BUCKS` | The currency this account will be using for transactions. This cannot be changed once established. | Yes |
+url: "{{url}}/api/v1/accounts"
+method: POST
+body:
+  type: json
+  content: |-
+    {
+        "owner": "{{$randomFirstName}} {{$randomLastName}}",
+     	"balance" : 500,
+        "currency" : "COSMIC_COINS"
+    }
+scripts:
+  - type: afterResponse
+    code: |-
+      // Test the structure of the successful response
+      pm.test("Response body structure is valid", function () {
+          var responseData = pm.response.json();
+          pm.expect(responseData).to.have.property('account');
+          pm.expect(responseData.account).to.be.an('object').that.has.property('id');
+      });
+    language: text/javascript
+examples: ./.resources/Create New Account.resources/examples
+order: 5000

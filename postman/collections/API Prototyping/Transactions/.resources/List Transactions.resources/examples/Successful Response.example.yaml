@@ -1,0 +1,82 @@
+$kind: http-example
+request:
+  url: "{{url}}/api/v1/transactions"
+  method: GET
+  queryParams:
+    - key: createdAt
+      value: 2024-01-10
+      disabled: true
+      description: (Optional) filter for transactions created on or after date (YYYY-MM-DD)
+    - key: toAccountId
+      value: "19"
+      disabled: true
+      description: (Optional) filter for the account that initiated the transaction
+    - key: fromAccountId
+      value: "17"
+      disabled: true
+      description: (Optional) filter for the account that received the transaction
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Sat, 17 Feb 2024 13:47:41 GMT
+    Content-Type: application/json; charset=utf-8
+    Content-Length: "759"
+    Connection: keep-alive
+    uWebSockets: "20"
+  body:
+    type: json
+    content: |-
+      {
+          "transactions": [
+              {
+                  "id": 9,
+                  "createdAt": "2024-02-17T13:41:26.000Z",
+                  "fromAccountId": 17,
+                  "toAccountId": 19,
+                  "currency": "COSMIC_COINS",
+                  "amount": 1000
+              },
+              {
+                  "id": 8,
+                  "createdAt": "2024-02-17T13:39:10.000Z",
+                  "fromAccountId": 17,
+                  "toAccountId": 19,
+                  "currency": "COSMIC_COINS",
+                  "amount": 1000
+              },
+              {
+                  "id": 7,
+                  "createdAt": "2024-02-17T13:12:40.000Z",
+                  "fromAccountId": 22,
+                  "toAccountId": 23,
+                  "currency": "COSMIC_COINS",
+                  "amount": 250
+              },
+              {
+                  "id": 6,
+                  "createdAt": "2024-02-17T13:12:10.000Z",
+                  "fromAccountId": 18,
+                  "toAccountId": 19,
+                  "currency": "COSMIC_COINS",
+                  "amount": 250
+              },
+              {
+                  "id": 4,
+                  "createdAt": "2024-02-16T22:30:32.000Z",
+                  "fromAccountId": 17,
+                  "toAccountId": 19,
+                  "currency": "COSMIC_COINS",
+                  "amount": 1000
+              },
+              {
+                  "id": 3,
+                  "createdAt": "2024-02-16T22:22:22.000Z",
+                  "fromAccountId": 18,
+                  "toAccountId": 19,
+                  "currency": "COSMIC_COINS",
+                  "amount": 250
+              }
+          ]
+      }
+order: 1000

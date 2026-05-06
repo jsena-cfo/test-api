@@ -1,0 +1,12 @@
+$kind: http-request
+description: Returns a list of turbulence reports
+url: "{{baseUrl}}/turbulence?airportCode=ATL"
+method: GET
+headers:
+  Accept: application/json
+queryParams:
+  - key: airportCode
+    value: ATL
+    description: airport code
+examples: ./.resources/Retrieve turbulence report.resources/examples
+order: 1000

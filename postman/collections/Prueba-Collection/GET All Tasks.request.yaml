@@ -1,0 +1,8 @@
+$kind: http-request
+url: "{{baseUrl}}/tasks"
+method: GET
+body:
+  type: json
+  content: ""
+examples: ./.resources/GET All Tasks.resources/examples
+order: 1000

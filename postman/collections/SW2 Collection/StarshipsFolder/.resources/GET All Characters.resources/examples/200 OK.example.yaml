@@ -1,0 +1,554 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/people"
+  method: GET
+  queryParams:
+    - key: id
+      value: "1"
+      disabled: true
+  body:
+    type: text
+    content: "{\r
+
+      \  \"title\": \"Updated Jira Tickets (edited)\",\r
+
+      \  \"completed\": false\r
+
+      }"
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: "HTTP 200 OK\r
+
+      Content-Type: application/json\r
+
+      Vary: Accept\r
+
+      Allow: GET, HEAD, OPTIONS\r
+
+      \r
+
+      {\r
+
+      \    \"count\": 82, \r
+
+      \    \"next\": \"https://swapi.dev/api/people/?page=2\", \r
+
+      \    \"previous\": null, \r
+
+      \    \"results\": [\r
+
+      \        {\r
+
+      \            \"name\": \"Luke Skywalker\", \r
+
+      \            \"height\": \"172\", \r
+
+      \            \"mass\": \"77\", \r
+
+      \            \"hair_color\": \"blond\", \r
+
+      \            \"skin_color\": \"fair\", \r
+
+      \            \"eye_color\": \"blue\", \r
+
+      \            \"birth_year\": \"19BBY\", \r
+
+      \            \"gender\": \"male\", \r
+
+      \            \"homeworld\": \"https://swapi.dev/api/planets/1/\", \r
+
+      \            \"films\": [\r
+
+      \                \"https://swapi.dev/api/films/1/\", \r
+
+      \                \"https://swapi.dev/api/films/2/\", \r
+
+      \                \"https://swapi.dev/api/films/3/\", \r
+
+      \                \"https://swapi.dev/api/films/6/\"\r
+
+      \            ], \r
+
+      \            \"species\": [], \r
+
+      \            \"vehicles\": [\r
+
+      \                \"https://swapi.dev/api/vehicles/14/\", \r
+
+      \                \"https://swapi.dev/api/vehicles/30/\"\r
+
+      \            ], \r
+
+      \            \"starships\": [\r
+
+      \                \"https://swapi.dev/api/starships/12/\", \r
+
+      \                \"https://swapi.dev/api/starships/22/\"\r
+
+      \            ], \r
+
+      \            \"created\": \"2014-12-09T13:50:51.644000Z\", \r
+
+      \            \"edited\": \"2014-12-20T21:17:56.891000Z\", \r
+
+      \            \"url\": \"https://swapi.dev/api/people/1/\"\r
+
+      \        }, \r
+
+      \        {\r
+
+      \            \"name\": \"C-3PO\", \r
+
+      \            \"height\": \"167\", \r
+
+      \            \"mass\": \"75\", \r
+
+      \            \"hair_color\": \"n/a\", \r
+
+      \            \"skin_color\": \"gold\", \r
+
+      \            \"eye_color\": \"yellow\", \r
+
+      \            \"birth_year\": \"112BBY\", \r
+
+      \            \"gender\": \"n/a\", \r
+
+      \            \"homeworld\": \"https://swapi.dev/api/planets/1/\", \r
+
+      \            \"films\": [\r
+
+      \                \"https://swapi.dev/api/films/1/\", \r
+
+      \                \"https://swapi.dev/api/films/2/\", \r
+
+      \                \"https://swapi.dev/api/films/3/\", \r
+
+      \                \"https://swapi.dev/api/films/4/\", \r
+
+      \                \"https://swapi.dev/api/films/5/\", \r
+
+      \                \"https://swapi.dev/api/films/6/\"\r
+
+      \            ], \r
+
+      \            \"species\": [\r
+
+      \                \"https://swapi.dev/api/species/2/\"\r
+
+      \            ], \r
+
+      \            \"vehicles\": [], \r
+
+      \            \"starships\": [], \r
+
+      \            \"created\": \"2014-12-10T15:10:51.357000Z\", \r
+
+      \            \"edited\": \"2014-12-20T21:17:50.309000Z\", \r
+
+      \            \"url\": \"https://swapi.dev/api/people/2/\"\r
+
+      \        }, \r
+
+      \        {\r
+
+      \            \"name\": \"R2-D2\", \r
+
+      \            \"height\": \"96\", \r
+
+      \            \"mass\": \"32\", \r
+
+      \            \"hair_color\": \"n/a\", \r
+
+      \            \"skin_color\": \"white, blue\", \r
+
+      \            \"eye_color\": \"red\", \r
+
+      \            \"birth_year\": \"33BBY\", \r
+
+      \            \"gender\": \"n/a\", \r
+
+      \            \"homeworld\": \"https://swapi.dev/api/planets/8/\", \r
+
+      \            \"films\": [\r
+
+      \                \"https://swapi.dev/api/films/1/\", \r
+
+      \                \"https://swapi.dev/api/films/2/\", \r
+
+      \                \"https://swapi.dev/api/films/3/\", \r
+
+      \                \"https://swapi.dev/api/films/4/\", \r
+
+      \                \"https://swapi.dev/api/films/5/\", \r
+
+      \                \"https://swapi.dev/api/films/6/\"\r
+
+      \            ], \r
+
+      \            \"species\": [\r
+
+      \                \"https://swapi.dev/api/species/2/\"\r
+
+      \            ], \r
+
+      \            \"vehicles\": [], \r
+
+      \            \"starships\": [], \r
+
+      \            \"created\": \"2014-12-10T15:11:50.376000Z\", \r
+
+      \            \"edited\": \"2014-12-20T21:17:50.311000Z\", \r
+
+      \            \"url\": \"https://swapi.dev/api/people/3/\"\r
+
+      \        }, \r
+
+      \        {\r
+
+      \            \"name\": \"Darth Vader\", \r
+
+      \            \"height\": \"202\", \r
+
+      \            \"mass\": \"136\", \r
+
+      \            \"hair_color\": \"none\", \r
+
+      \            \"skin_color\": \"white\", \r
+
+      \            \"eye_color\": \"yellow\", \r
+
+      \            \"birth_year\": \"41.9BBY\", \r
+
+      \            \"gender\": \"male\", \r
+
+      \            \"homeworld\": \"https://swapi.dev/api/planets/1/\", \r
+
+      \            \"films\": [\r
+
+      \                \"https://swapi.dev/api/films/1/\", \r
+
+      \                \"https://swapi.dev/api/films/2/\", \r
+
+      \                \"https://swapi.dev/api/films/3/\", \r
+
+      \                \"https://swapi.dev/api/films/6/\"\r
+
+      \            ], \r
+
+      \            \"species\": [], \r
+
+      \            \"vehicles\": [], \r
+
+      \            \"starships\": [\r
+
+      \                \"https://swapi.dev/api/starships/13/\"\r
+
+      \            ], \r
+
+      \            \"created\": \"2014-12-10T15:18:20.704000Z\", \r
+
+      \            \"edited\": \"2014-12-20T21:17:50.313000Z\", \r
+
+      \            \"url\": \"https://swapi.dev/api/people/4/\"\r
+
+      \        }, \r
+
+      \        {\r
+
+      \            \"name\": \"Leia Organa\", \r
+
+      \            \"height\": \"150\", \r
+
+      \            \"mass\": \"49\", \r
+
+      \            \"hair_color\": \"brown\", \r
+
+      \            \"skin_color\": \"light\", \r
+
+      \            \"eye_color\": \"brown\", \r
+
+      \            \"birth_year\": \"19BBY\", \r
+
+      \            \"gender\": \"female\", \r
+
+      \            \"homeworld\": \"https://swapi.dev/api/planets/2/\", \r
+
+      \            \"films\": [\r
+
+      \                \"https://swapi.dev/api/films/1/\", \r
+
+      \                \"https://swapi.dev/api/films/2/\", \r
+
+      \                \"https://swapi.dev/api/films/3/\", \r
+
+      \                \"https://swapi.dev/api/films/6/\"\r
+
+      \            ], \r
+
+      \            \"species\": [], \r
+
+      \            \"vehicles\": [\r
+
+      \                \"https://swapi.dev/api/vehicles/30/\"\r
+
+      \            ], \r
+
+      \            \"starships\": [], \r
+
+      \            \"created\": \"2014-12-10T15:20:09.791000Z\", \r
+
+      \            \"edited\": \"2014-12-20T21:17:50.315000Z\", \r
+
+      \            \"url\": \"https://swapi.dev/api/people/5/\"\r
+
+      \        }, \r
+
+      \        {\r
+
+      \            \"name\": \"Owen Lars\", \r
+
+      \            \"height\": \"178\", \r
+
+      \            \"mass\": \"120\", \r
+
+      \            \"hair_color\": \"brown, grey\", \r
+
+      \            \"skin_color\": \"light\", \r
+
+      \            \"eye_color\": \"blue\", \r
+
+      \            \"birth_year\": \"52BBY\", \r
+
+      \            \"gender\": \"male\", \r
+
+      \            \"homeworld\": \"https://swapi.dev/api/planets/1/\", \r
+
+      \            \"films\": [\r
+
+      \                \"https://swapi.dev/api/films/1/\", \r
+
+      \                \"https://swapi.dev/api/films/5/\", \r
+
+      \                \"https://swapi.dev/api/films/6/\"\r
+
+      \            ], \r
+
+      \            \"species\": [], \r
+
+      \            \"vehicles\": [], \r
+
+      \            \"starships\": [], \r
+
+      \            \"created\": \"2014-12-10T15:52:14.024000Z\", \r
+
+      \            \"edited\": \"2014-12-20T21:17:50.317000Z\", \r
+
+      \            \"url\": \"https://swapi.dev/api/people/6/\"\r
+
+      \        }, \r
+
+      \        {\r
+
+      \            \"name\": \"Beru Whitesun lars\", \r
+
+      \            \"height\": \"165\", \r
+
+      \            \"mass\": \"75\", \r
+
+      \            \"hair_color\": \"brown\", \r
+
+      \            \"skin_color\": \"light\", \r
+
+      \            \"eye_color\": \"blue\", \r
+
+      \            \"birth_year\": \"47BBY\", \r
+
+      \            \"gender\": \"female\", \r
+
+      \            \"homeworld\": \"https://swapi.dev/api/planets/1/\", \r
+
+      \            \"films\": [\r
+
+      \                \"https://swapi.dev/api/films/1/\", \r
+
+      \                \"https://swapi.dev/api/films/5/\", \r
+
+      \                \"https://swapi.dev/api/films/6/\"\r
+
+      \            ], \r
+
+      \            \"species\": [], \r
+
+      \            \"vehicles\": [], \r
+
+      \            \"starships\": [], \r
+
+      \            \"created\": \"2014-12-10T15:53:41.121000Z\", \r
+
+      \            \"edited\": \"2014-12-20T21:17:50.319000Z\", \r
+
+      \            \"url\": \"https://swapi.dev/api/people/7/\"\r
+
+      \        }, \r
+
+      \        {\r
+
+      \            \"name\": \"R5-D4\", \r
+
+      \            \"height\": \"97\", \r
+
+      \            \"mass\": \"32\", \r
+
+      \            \"hair_color\": \"n/a\", \r
+
+      \            \"skin_color\": \"white, red\", \r
+
+      \            \"eye_color\": \"red\", \r
+
+      \            \"birth_year\": \"unknown\", \r
+
+      \            \"gender\": \"n/a\", \r
+
+      \            \"homeworld\": \"https://swapi.dev/api/planets/1/\", \r
+
+      \            \"films\": [\r
+
+      \                \"https://swapi.dev/api/films/1/\"\r
+
+      \            ], \r
+
+      \            \"species\": [\r
+
+      \                \"https://swapi.dev/api/species/2/\"\r
+
+      \            ], \r
+
+      \            \"vehicles\": [], \r
+
+      \            \"starships\": [], \r
+
+      \            \"created\": \"2014-12-10T15:57:50.959000Z\", \r
+
+      \            \"edited\": \"2014-12-20T21:17:50.321000Z\", \r
+
+      \            \"url\": \"https://swapi.dev/api/people/8/\"\r
+
+      \        }, \r
+
+      \        {\r
+
+      \            \"name\": \"Biggs Darklighter\", \r
+
+      \            \"height\": \"183\", \r
+
+      \            \"mass\": \"84\", \r
+
+      \            \"hair_color\": \"black\", \r
+
+      \            \"skin_color\": \"light\", \r
+
+      \            \"eye_color\": \"brown\", \r
+
+      \            \"birth_year\": \"24BBY\", \r
+
+      \            \"gender\": \"male\", \r
+
+      \            \"homeworld\": \"https://swapi.dev/api/planets/1/\", \r
+
+      \            \"films\": [\r
+
+      \                \"https://swapi.dev/api/films/1/\"\r
+
+      \            ], \r
+
+      \            \"species\": [], \r
+
+      \            \"vehicles\": [], \r
+
+      \            \"starships\": [\r
+
+      \                \"https://swapi.dev/api/starships/12/\"\r
+
+      \            ], \r
+
+      \            \"created\": \"2014-12-10T15:59:50.509000Z\", \r
+
+      \            \"edited\": \"2014-12-20T21:17:50.323000Z\", \r
+
+      \            \"url\": \"https://swapi.dev/api/people/9/\"\r
+
+      \        }, \r
+
+      \        {\r
+
+      \            \"name\": \"Obi-Wan Kenobi\", \r
+
+      \            \"height\": \"182\", \r
+
+      \            \"mass\": \"77\", \r
+
+      \            \"hair_color\": \"auburn, white\", \r
+
+      \            \"skin_color\": \"fair\", \r
+
+      \            \"eye_color\": \"blue-gray\", \r
+
+      \            \"birth_year\": \"57BBY\", \r
+
+      \            \"gender\": \"male\", \r
+
+      \            \"homeworld\": \"https://swapi.dev/api/planets/20/\", \r
+
+      \            \"films\": [\r
+
+      \                \"https://swapi.dev/api/films/1/\", \r
+
+      \                \"https://swapi.dev/api/films/2/\", \r
+
+      \                \"https://swapi.dev/api/films/3/\", \r
+
+      \                \"https://swapi.dev/api/films/4/\", \r
+
+      \                \"https://swapi.dev/api/films/5/\", \r
+
+      \                \"https://swapi.dev/api/films/6/\"\r
+
+      \            ], \r
+
+      \            \"species\": [], \r
+
+      \            \"vehicles\": [\r
+
+      \                \"https://swapi.dev/api/vehicles/38/\"\r
+
+      \            ], \r
+
+      \            \"starships\": [\r
+
+      \                \"https://swapi.dev/api/starships/48/\", \r
+
+      \                \"https://swapi.dev/api/starships/59/\", \r
+
+      \                \"https://swapi.dev/api/starships/64/\", \r
+
+      \                \"https://swapi.dev/api/starships/65/\", \r
+
+      \                \"https://swapi.dev/api/starships/74/\"\r
+
+      \            ], \r
+
+      \            \"created\": \"2014-12-10T16:16:29.192000Z\", \r
+
+      \            \"edited\": \"2014-12-20T21:17:50.325000Z\", \r
+
+      \            \"url\": \"https://swapi.dev/api/people/10/\"\r
+
+      \        }\r
+
+      \    ]\r
+
+      }"
+order: 1000

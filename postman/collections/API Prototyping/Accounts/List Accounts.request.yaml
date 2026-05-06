@@ -1,0 +1,32 @@
+$kind: http-request
+description: This endpoint will list all accounts that exist at the Intergalactic Bank. Optionally, filter by `owner` (using a full name), or the `createdAt` date (using `YYYY-MM-DD` format).
+url: "{{url}}/api/v1/accounts?createdAt=2023-04-10"
+method: GET
+queryParams:
+  - key: owner
+    value: Nova Newman
+    disabled: true
+    description: (Optional) filter by full name of the account owner
+  - key: createdAt
+    value: 2023-04-10
+    description: (Optional) filter for accounts created on or after date (YYYY-MM-DD)
+scripts:
+  - type: afterResponse
+    code: |-
+      // Test to check the structure of the successful response
+      pm.test("Response body structure is valid", function () {
+          var responseJSON = pm.response.json();
+          pm.expect(responseJSON).to.have.property('accounts').that.is.an('array');
+          if (responseJSON.accounts.length > 0) {
+              responseJSON.accounts.forEach(function(account) {
+                  pm.expect(account).to.have.property('id');
+                  pm.expect(account).to.have.property('owner');
+                  pm.expect(account).to.have.property('createdAt');
+                  pm.expect(account).to.have.property('balance');
+                  pm.expect(account).to.have.property('currency');
+              });
+          }
+      });
+    language: text/javascript
+examples: ./.resources/List Accounts.resources/examples
+order: 1000

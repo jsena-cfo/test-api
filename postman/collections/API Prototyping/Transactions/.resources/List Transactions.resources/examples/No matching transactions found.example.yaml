@@ -1,0 +1,26 @@
+$kind: http-example
+request:
+  url: "{{url}}/api/v1/transactions?createdAt=2024-01-10&toAccountID=18974440&fromAccountId=9999999"
+  method: GET
+  queryParams:
+    - key: createdAt
+      value: 2024-01-10
+      description: (Optional) filter for transactions created on or after date (YYYY-MM-DD)
+    - key: toAccountID
+      value: "18974440"
+      description: (Optional) filter for the account that initiated the transaction
+    - key: fromAccountId
+      value: "9999999"
+      description: (Optional) filter for the account that initiated the transaction
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+          "transactions": []
+      }
+order: 2000

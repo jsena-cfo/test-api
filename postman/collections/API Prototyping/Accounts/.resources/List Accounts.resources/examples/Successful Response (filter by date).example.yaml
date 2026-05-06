@@ -1,0 +1,37 @@
+$kind: http-example
+request:
+  url: "{{url}}/api/v1/accounts?createdAt=2023-04-10"
+  method: GET
+  queryParams:
+    - key: owner
+      value: Nova Newman
+      disabled: true
+    - key: createdAt
+      value: 2023-04-10
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+          "accounts": [
+              {
+                  "id": "1",
+                  "owner": "Nova Newman",
+                  "createdAt": "2024-01-10T14:54:29.739Z",
+                  "balance": 10000,
+                  "currency" : "COSMIC_COINS"
+              },
+              {
+                  "id": "2",
+                  "owner": "Gary Galaxy",
+                  "createdAt": "2024-01-10T14:54:29.739Z",
+                  "balance": 237,
+                  "currency" : "COSMIC_COINS"
+              }
+          ]
+      }
+order: 1000

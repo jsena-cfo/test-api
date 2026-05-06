@@ -1,0 +1,25 @@
+$kind: http-example
+request:
+  url: "{{url}}/api/v1/transactions/:id"
+  method: GET
+  pathVariables:
+    - key: id
+      value: "999"
+      description: (Required) transaction id
+response:
+  statusCode: 400
+  statusText: Bad Request
+  headers:
+    Date: Sat, 17 Feb 2024 13:33:28 GMT
+    Content-Type: application/json; charset=utf-8
+    Content-Length: "67"
+    Connection: keep-alive
+    uWebSockets: "20"
+  body:
+    type: json
+    content: |-
+      {
+          "name": "instanceNotFound",
+          "message": "Transaction does not exist."
+      }
+order: 2000

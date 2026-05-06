@@ -1,0 +1,54 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/people/101"
+  method: PUT
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: "{\r
+
+      \"name\": \"Jar Jar Binks\",\r
+
+      \"height\": \"195\",\r
+
+      \"mass\": \"80\",\r
+
+      \"hair_color\": \"pink\",\r
+
+      \"skin_color\": \"fair\",\r
+
+      \"eye_color\": \"blue\",\r
+
+      \"birth_year\": \"19BBY\",\r
+
+      \"gender\": \"male\",\r
+
+      \"homeworld\": [],\r
+
+      \"films\": [],\r
+
+      \"species\": [],\r
+
+      \"vehicles\": [],\r
+
+      \"starships\": [],\r
+
+      \"created\": \"2014-12-09T13:50:51.644000Z\",\r
+
+      \"edited\": \"2014-12-20T21:17:56.891000Z\",\r
+
+      \"url\": \"https://swapi.dev/api/people/101/\"\r
+
+      }"
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: "HTTP 200 OK\r
+
+      Content-Type: application/json\r
+
+      Vary: Accept"
+order: 1000

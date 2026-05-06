@@ -1,0 +1,54 @@
+$kind: http-request
+description: Returns a list of METAR reports
+url: "{{baseUrl}}/metars?airportCode=ATL"
+method: GET
+headers:
+  Accept: application/json
+queryParams:
+  - key: airportCode
+    value: ATL
+    description: airport code
+scripts:
+  - type: afterResponse
+    code: "const time= pm.response.responseTime\r
+
+      const name= pm.info.requestName\r
+
+      \r
+
+      console.log(`[PERF] ${name}: ${time}ms`)\r
+
+      \r
+
+      if (time > 400){\r
+
+      \   console.warn(\r
+
+      \    `[SLOW] ${name}: ${time}ms exceeds soft limit`\r
+
+      \   );\r
+
+      }\r
+
+      \r
+
+      pm.test(\"Response time is less than 400ms\", function () {\r
+
+      \    pm.expect(pm.response.responseTime).to.be.below(400);\r
+
+      });\r
+
+      \r
+
+      \r
+
+      pm.test(\"Response size is under 10kb\", function () {\r
+
+      \    const sizeKB = pm.response.responseSize / 1024;\r
+
+      \    pm.expect(sizeKB).to.be.below(10);\r
+
+      });"
+    language: text/javascript
+examples: ./.resources/Retrieve METAR report.resources/examples
+order: 1000

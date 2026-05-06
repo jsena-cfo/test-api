@@ -1,0 +1,41 @@
+$kind: http-request
+description: This endpoint will retrieve transactions for a given account, optionally filtering on the date created (`createdAt`) and the account receiving the transaction (`toAccountId`).
+url: "{{url}}/api/v1/transactions"
+method: GET
+queryParams:
+  - key: createdAt
+    value: 2024-01-10
+    disabled: true
+    description: (Optional) filter for transactions created on or after date (YYYY-MM-DD)
+  - key: toAccountID
+    value: "19"
+    disabled: true
+    description: (Optional) filter for the account that initiated the transaction
+  - key: fromAccountID
+    value: "17"
+    disabled: true
+    description: (Optional) filter for the account that received the transaction
+scripts:
+  - type: afterResponse
+    code: |-
+      var responseData = pm.response.json();
+
+      // Test to check if the response is an object with a transactions property
+      pm.test("Response is an object with transactions property", function () {
+          pm.expect(responseData).to.be.an('object').that.has.property('transactions');
+      });
+
+      // Test to check the structure and data types of the transactions array
+      pm.test("Transactions array structure and data types are valid", function () {
+          responseData.transactions.forEach(function(transaction) {
+              pm.expect(transaction).to.be.an('object').that.has.property('id').to.be.a('number');
+              pm.expect(transaction).to.have.property('createdAt').to.be.a('string');
+              pm.expect(transaction).to.have.property('fromAccountId').to.be.a('number');
+              pm.expect(transaction).to.have.property('toAccountId').to.be.a('number');
+              pm.expect(transaction).to.have.property('currency').to.be.a('string');
+              pm.expect(transaction).to.have.property('amount').to.be.a('number');
+          });
+      });
+    language: text/javascript
+examples: ./.resources/List Transactions.resources/examples
+order: 1000

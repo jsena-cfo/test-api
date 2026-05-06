@@ -1,0 +1,12 @@
+name: PostAir Weather Environment
+values:
+  - key: baseUrl
+    value: https://education.postmanlabs.com/v1/weather
+    enabled: true
+  - key: apiKey
+    value: "1234"
+    enabled: true
+  - key: airportCode
+    value: ATL
+    enabled: true
+color: null

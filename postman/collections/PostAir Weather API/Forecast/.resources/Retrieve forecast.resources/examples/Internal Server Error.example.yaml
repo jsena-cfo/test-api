@@ -1,0 +1,32 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/forecast?forecastCity=string"
+  method: GET
+  headers:
+    - key: Accept
+      value: application/problem+json
+    - key: x-api-key
+      value: <API Key>
+      description: "Added as a part of security scheme: apikey"
+  queryParams:
+    forecastCity: string
+response:
+  statusCode: 500
+  statusText: Internal Server Error
+  headers:
+    - key: Content-Type
+      value: application/problem+json
+    - key: Content-Type
+      value: ""
+  body:
+    type: json
+    content: |-
+      {
+        "type": "https://en.wikipedia.org/wiki/HTTP_500",
+        "title": "Internal Server Error",
+        "status": 500,
+        "detail": "Internal Server Error",
+        "instance": "urn:api:request:example-500",
+        "correlationId": "example-correlation-id"
+      }
+order: 5000

@@ -1,0 +1,29 @@
+# Use this workspace to collaborate
+workspace:
+  id: 3b292187-903e-49fe-974f-7f9d966e3279
+
+# Each entry here maps a local resource to one or more corresponding objects in Postman Cloud
+
+cloudResources:
+  collections:
+    ..\postman\collections\Prueba-Collection: 34967016-0078b32e-ebc8-467d-a6a1-f924d3a25204
+    ..\postman\collections\API Prototyping: 34967016-19db330d-abd4-4033-a4e8-ecc2411bf598
+    ..\postman\collections\SW2 Collection: 34967016-23aab729-669c-43ef-8170-6ce040fff0cd
+    ..\postman\collections\Jsonplaceholder Collection: 34967016-7473b363-4b9c-48d0-8a28-684c44f6c7f1
+    ..\postman\collections\Poke Collection: 34967016-78456f96-f4f1-48e6-8682-c5eb2862ca86
+    ..\postman\collections\Test Collection: 34967016-7afbe907-eeb5-46e8-b079-5ef15d7f0975
+    ..\postman\collections\PostAir Weather API: 34967016-c39f7314-f3e4-4b87-96e4-1426ebd4ae75
+    ..\postman\collections\Api-Collection: 34967016-c6edfc22-02dd-4a7a-baeb-f1f7eb7fe421
+  environments:
+    ..\postman\environments\Test Mock.environment.yaml: 34967016-69bdef7d-b9c6-45f4-a6c4-7cef08c4fe9b
+    ..\postman\environments\Prueba Mock Server.environment.yaml: 34967016-71ac8130-5efa-404b-a5b0-e019b1aae7c2
+    ..\postman\environments\Environment Jsonplaceholder.environment.yaml: 34967016-c57aada3-aade-4fde-b722-94a68f03118c
+    ..\postman\environments\PostAir Weather Environment.environment.yaml: 34967016-cc9b4832-2d91-49bc-9313-de35c9a56feb
+    ..\postman\environments\Environment Swapi.environment.yaml: 34967016-e6ea110b-933d-4b72-97be-1362c23059ef
+    ..\postman\environments\Environment Poke.environment.yaml: 34967016-eebd1869-496b-4849-b2e9-84f4c6edfc7a
+
+# All resources in the `postman/` folder are automatically registered in Local View.
+# Point to additional files outside the `postman/` folder to register them individually. Example:
+#localResources:
+#  collections:
+#    - ../tests/E2E Test Collection/
